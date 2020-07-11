@@ -1,13 +1,23 @@
 os: linux
 language: minimal
 
+before_install:
+  - sudo apt-get install texlive-xetex 
+  - sudo apt-get install texlive-fonts-recommended
+  - sudo apt-get install fonts-lmodern
+script: xelatex --pdf  --engine=xetex --synctex=1 --clean Connor_Flanigan_Resume.tex
+
 matrix:
   include:
     - stage: "build"
-      before_install:
-        - sudo apt-get install texlive-xetex 
-        - sudo apt-get install texlive-fonts-recommended
-        - sudo apt-get install fonts-lmodern
-      script: xelatex --pdf  --engine=xetex --synctex=1 --clean Connor_Flanigan_Resume.tex
     - stage: "deploy"
+      deploy:
+        provider: releases
+      api_key: "GITHUB OAUTH TOKEN"
+      file: Connor_Flanigan_Resume.pdf
+      skip_cleanup: true
+      on:
+        repo: theflanman/resume
+        tags: true
+      
     
