@@ -13,12 +13,10 @@ matrix:
     - stage: "deploy"
       deploy:
         provider: releases
-      api_key: 
-        secret: $GITHUB_OAUTH_TOKEN
-      file: Connor_Flanigan_Resume.pdf
+      api_key: "GITHUB_OAUTH_TOKEN"
+      file: "Connor_Flanigan_Resume.pdf"
       skip_cleanup: true
       on:
-        repo: theflanman/resume
         tags: true
       
     
