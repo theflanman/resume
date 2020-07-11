@@ -2,21 +2,20 @@ os: linux
 language: minimal
 
 before_install:
-  - sudo apt-get install texlive-xetex 
-  - sudo apt-get install texlive-fonts-recommended
-  - sudo apt-get install fonts-lmodern
+- sudo apt-get install texlive-xetex
+- sudo apt-get install texlive-fonts-recommended
+- sudo apt-get install fonts-lmodern
 script: xelatex --pdf  --engine=xetex --synctex=1 --clean Connor_Flanigan_Resume.tex
 
 matrix:
   include:
-    - stage: "build"
-    - stage: "deploy"
-      deploy:
-        provider: releases
-      api_key: "GITHUB_OAUTH_TOKEN"
-      file: "Connor_Flanigan_Resume.pdf"
-      skip_cleanup: true
+  - stage: build
+  - stage: deploy
+    deploy:
+      provider: releases
+      api_key:
+        secure: BfLE8Fg0QBGthr/Yuk7CFeIqMcRmzf5KWqrfNf9WMxX/Z/+swnUcMgVec6Q9SiLjB1mGXljxgD61SP4rkCxqhVx1GIzKOFcbTd8dMp8Jy5lR5oHT5uJ5+OT7/SkinOJAfxlxuWSN9ClAsuI06/LfpunOEIO6M7jIjDBIM5dnAAkoEORX2d8rH+t0fV4QKKIkfqbPBMLR5rQJtybGKhN37QYOwSZsWT7Prl1v40FQSqk6s7CftYyXKJ8Dg0lj9j2cyDTq3GnqRHRAj5N9pCQfNgEhGYjnqHJxdUGVCPkyDAey3l1QQr+lDJ8jIO+eltOaqNWtiQOzMe3vd9X/rgd6CTYysFwPGGJG+7RtBPADxT3fBevnlJ7BTp5TX3gV7zmq/orZtMAiUjkgB9ZQlSyK3uYPoEAAi5/Z7xmog9XcaHHzhXJZwF9DZ3NCRr8nHO0K8xI0ESmzTF1q4lEjwkoY8/FX2jxVuhDpELQF0RcnjNoNnzWEkBRMJN+ydeAUEGJbdxUjdUK/hJrwKKMlXbzUvTFzmaixw/KikOv6h45q+l8mmpo76WFPr7vhBo45FH3vd5+lhRSB0CRy0oA44SYmNjAOFbgKHT/pht83wSgYuaopyfVI/YBwqH0rLZZ0v0waZKiCqag3nMh2SihxCPNGjjS6uHrLkaJXKCBXGhtBwYs=
+      file: 'Connor_Flanigan_Resume.pdf'
       on:
-        tags: true
-      
-    
+        repo: theflanman/resume
+      skip_cleanup: 'true'
