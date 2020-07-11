@@ -1,0 +1,13 @@
+os: linux
+language: minimal
+
+matrix:
+  include:
+    - stage: "build"
+      before_install:
+        - sudo apt-get install texlive-xetex 
+        - sudo apt-get install texlive-fonts-recommended
+        - sudo apt-get install fonts-lmodern
+      script: xelatex --pdf  --engine=xetex --synctex=1 --clean Connor_Flanigan_Resume.tex
+    - stage: "deploy"
+    
