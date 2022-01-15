@@ -20,6 +20,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[letterpaper]{deedy-resume} % Use US Letter paper, change to a4paper for A4 
+\usepackage{multicol}
 
 \begin{document}
 
@@ -31,14 +32,11 @@
 
 \namesection{Connor}{Flanigan}{ % Your name
 % \urlstyle{same}\url{https://flanigan.engineering/} \\ % Your website, LinkedIn profile or other web address  % commenting out until I fix the DNS records
-\href{mailto:connorflanigan@gmail.com}{connorflanigan@gmail.com} | (207) 332-0210 % Your contact information
+\href{mailto:connorflanigan@gmail.com}{connorflanigan@gmail.com} | (207) 332-0210 \\  % Your contact information
+Github:// \href{https://github.com/CFlaniganMide}{\bf CFlaniganMide} \\
+Github:// \href{https://github.com/theflanman}{\bf TheFlanMan} \\
+LinkedIn:// \href{https://www.linkedin.com/in/connor-flanigan}{\bf Connor-Flanigan}
 }
-
-%----------------------------------------------------------------------------------------
-%	LEFT COLUMN
-%----------------------------------------------------------------------------------------
-
-\begin{minipage}[t]{0.33\textwidth} % The left column takes up 33% of the text width of the page
 
 %------------------------------------------------
 % Education
@@ -46,82 +44,41 @@
 
 \section{Education} 
 
-\subsection{Worcester Polytechnic}
-\subsection{Institute}
+\subsection{Worcester Polytechnic Institute \hfill}
 
 \descript{BS in Robotics Engineering}
 \location{October 2016 | Worcester, MA}
 
-\sectionspace % Some whitespace after the section
-
-%------------------------------------------------
-% Links
-%------------------------------------------------
-
-\section{Links} 
-
-Github:// \href{https://github.com/CFlaniganMide}{\bf CFlaniganMide} \\
-Github:// \href{https://github.com/theflanman}{\bf TheFlanMan} \\
-LinkedIn:// \href{https://www.linkedin.com/in/connor-flanigan}{\bf Connor-Flanigan}
-
-\sectionspace % Some whitespace after the section
-
 %------------------------------------------------
 % Skills
 %------------------------------------------------
-
-\section{Skills}
-
-\subsection{Languages}
-
-\location{Significant Experience:}
-Python \textbullet{} Matlab \textbullet{} Lua \\ 
-\location{Some Experience:}
-Java \textbullet{} JavaScript \textbullet{} HTML \\
-CSS \textbullet{} C/C++ \textbullet{} Labview \textbullet{} C\# \\
-
-\subsection{Development Activities}
-Software Design \textbullet{} Requirements Elicitation
-
-\subsection{Packages and Toolkits}
-\location{Python:}
-NumPy \textbullet{} SciPy \textbullet{} TensorFlow \textbullet{} ROS
-\location{Matlab:}
-Signal Processing \textbullet{} Compiler \textbullet{} MEX
-
-\subsection{Analysis}
-Signals Processing \textbullet{} Spectral Analysis \textbullet{} Fourier Analysis \textbullet{} Circuits \textbullet{} Software Profiling
-
-\subsection{Software}
-Solidworks \textbullet{} ESPRIT \textbullet{} Pycharm
-
-\sectionspace % Some whitespace after the section
-
-%------------------------------------------------
-% Coursework
-%------------------------------------------------
-
-\section{Coursework}
-
-Algorithms \\
-Artificial Intelligence/Machine Learning \\
-Unified Robotics I-IV (Actuation, Sensing, Manipulation, and Navigation) \\
-Software Engineering \\
-Mechatronics \\ 
-Controls
-
-\sectionspace % Some whitespace after the section
-
-%----------------------------------------------------------------------------------------
-
-\end{minipage} % The end of the left column
-\hfill
 %
-%----------------------------------------------------------------------------------------
-%	RIGHT COLUMN
-%----------------------------------------------------------------------------------------
+% \section{Skills}
+% 
+% \subsection{Languages}
 %
-\begin{minipage}[t]{0.66\textwidth} % The right column takes up 66% of the text width of the page
+% \location{Significant Experience:}
+% Python \textbullet{} Matlab \textbullet{} Lua \\ 
+% \location{Some Experience:}
+% Java \textbullet{} JavaScript \textbullet{} HTML \\
+% CSS \textbullet{} C/C++ \textbullet{} Labview \textbullet{} C\# \\
+%
+% \subsection{Development Activities}
+% Software Design \textbullet{} Requirements Elicitation
+%
+% \subsection{Packages and Toolkits}
+% \location{Python:}
+% NumPy \textbullet{} SciPy \textbullet{} TensorFlow \textbullet{} ROS
+% \location{Matlab:}
+% Signal Processing \textbullet{} Compiler \textbullet{} MEX
+%
+% \subsection{Analysis}
+% Signals Processing \textbullet{} Spectral Analysis \textbullet{} Fourier Analysis \textbullet{} Circuits \textbullet{} Software Profiling
+%
+% \subsection{Software}
+% Solidworks \textbullet{} ESPRIT \textbullet{} Pycharm
+%
+% \sectionspace % Some whitespace after the section
 
 %------------------------------------------------
 % Experience
@@ -133,14 +90,13 @@ Controls
 \descript{| Software Engineer II}
 
 \location{November 2017 - Present | Woburn, MA}
-\vspace{\topsep} % Hacky fix for awkward extra vertical space
 \begin{tightitemize}
-\item Designed and managed development of automated hardware testing systems, including a system to build, distribute, and test new firmware for Endaq devices.
-\item Lead software engineer for DeMCAS, a SBIR project with the Army to develop an automated design tool.
-\item Project manager and lead software engineer for the Endaq Analyzer, a tool to convert, visual, and analyze Midé's proprietary, EBML-based file format.
-\item Developed a novel algorithm for sound event detection using spectral analysis to classify rat calls in medical research.
-\item Wrote SBIR contract proposals for the DoD involving spectrographic signal analysis, machine learning, and condition-based maintenance.
-\item Developer for Midé's open source libraries, in particular ebmlite and idelib.
+\item Created a hardware/firmware testing system using Raspberry Pis and Github Actions.  This required Python scripts, systemd services, udev rules, and a custom Ubuntu image.
+\item Built DeMCAS, a tool to optimize parametric aerofoil designs in Matlab.  This primarily utilized a gradient descent method to reach an optimal solution.
+\item Technical lead for the Endaq Analyzer, a Matlab tool for visualizing and analyzing timeseries data using spectral techniques such as spectrograms and PSDs.
+\item Developed a library in Python to classify rat calls using spectral analysis, image recognition methods, and bayesian estimation.  The library went through multiple revisions, utilizing Numpy, SciPy, Scikit-Learn, and Tensorflow.
+\item Wrote SBIR contract proposals focussing on spectrographic signal analysis, machine learning, and condition-based maintenance.
+\item Developer for Midé's open source Python libraries, which are used to analyze shock and vibration data.
 \end{tightitemize}
 
 \sectionspace % Some whitespace after the section
@@ -152,9 +108,10 @@ Controls
 
 \location{February 2017 – October 2017 | Westbrook, ME}
 \begin{tightitemize}
-\item Developing a system and interface for running custom chemical assays using Catalyst machines.
-\item Designing, building, and testing system to recreate various errors in manufactoring for product testing.
-\item Designed circuits to monitor and breakout electrical systems in current products to test performance.
+\item Developing an interface for running custom chemical assays using IDEXX's Catalyst machines.  The client frontend used JavaScript to create dynamic forms, and sent web requests to the device's server backend written in Lua.
+\item Created a test rig to replicate manufacturing errors for root cause analysis.  The software control was written in Labview, and ran on a CRIO FPGA.
+\item Designed experiments to identify errors in automated immuno-assay tests.  Utilized high speed camera and machine vision, written in Labview and Python.
+\item Created electrical breakouts to interface National Instruments hardware and our custom test rigs.
 \end{tightitemize}
 
 \sectionspace % Some whitespace after the section
@@ -166,27 +123,25 @@ Controls
 
 \location{July 2015 - September 2015 | Worcester, MA}
 \begin{tightitemize}
-\item Rewrote labs for RBE 3002, focuses on mobile robot exploration using ROS and Turtlebots.
-\item New labs focused on creating a coherent series of lessons building off the previous.
-\item Instructions updated to then-current versions of Ubuntu and ROS.
+\item Wrote labs for WPI's mobile robotics course, in order to create a more coherent experience for students.  The labs are written in Python and utilize ROS to control Turtlebot 2's; the final lab has students use their prior labs to control the turtlebot in order to map an environment using SLAM.
 \end{tightitemize}
 
 \sectionspace % Some whitespace after the section
 
 %------------------------------------------------
 
-\runsubsection{Wasco Products}
-\descript{| Engineering Intern}
+% \runsubsection{Wasco Products}
+% \descript{| Engineering Intern}
+%
+% \location{July 2013 - September 2013, June 2014 - September 2014 | Wells, ME}
+% \begin{tightitemize}
+% \item Developed software in C\# for integration into a server to automate designs for a variety of products within a team of three developers.
+% \item Wrote instruction manuals for assembly and installation of Wasco's residential skylights.
+% \end{tightitemize}
+%
+% \sectionspace % Some whitespace after the section
 
-\location{July 2013 - September 2013, June 2014 - September 2014 | Wells, ME}
-\begin{tightitemize}
-\item Developed software in C\# for integration into a server to automate designs for a variety of products within a team of three developers.
-\item Wrote instruction manuals for assembly and installation of Wasco's residential skylights.
-\end{tightitemize}
-
-\sectionspace % Some whitespace after the section
-
-\end{minipage} 
+% \end{minipage} 
 
 
 
@@ -194,35 +149,23 @@ Controls
 % Projects
 %------------------------------------------------
 
-\newpage % Start a new page
+% \newpage % Start a new page
 
 \section{Projects}
 
 \runsubsection{Midé Technology}
 \descript{| \underline{RASP} \href{https://www.sbir.gov/node/1627655}{(Phase I)} \href{https://www.sbir.gov/node/1588569}{(Phase II)}}
-
-\location{December 2017 - present}
-The Rodent Audio Signal Processor has been developed in two phases based on STTR contracts.  Phase I required the development of a novel algorithm to detect, segment, and classify rat vocalization from ultrasonic recordings.  In this phase, I was the only software engineer working on the project, so all tasks relating to software design and algorithm development were my responsibility.  Based on the success of phase I, we were awarded a second phase of the contract.  In this phase, our focus was aimed much more towards crating a deliverable product, so my role moved more into software architecture while other developers worked on developing the gui and refining the algorithm, and I moved on to other projects.
-
-\sectionspace % Some whitespace after the section
-
-%------------------------------------------------
-
-\runsubsection{Midé Technology}
-\descript{| \href{https://github.com/MideTechnology/ebmlite}{\underline{ebmlite}}}
-
-\location{Ongoing open-source development}
-EBMLite is an open-source python library used to interface with ebml documents, a binary data storage format used our proprietary IDE file format, Matroska video files, and others.  My role on this project as a developer has been fairly widespread over my time at Midé.  I've written tests, implemented a CI pipeline based on Travis-CI, improved performance, and updated the library from python 2.7 to python 3.5+.
+\location{December 2017 - August 2021}
+RASP is an audio processing library developed in Python, utilizing Numpy, SciPy, Scikit-Learn, and Tensorflow across it's different iterations.  The first phase of the contract was largely self-directed, and required me to refine my skills in signal processing and image analysis.  In phase II, we refined the system with a few methods, namely bayesian estimation and recurrent neural networks.
 
 \sectionspace % Some whitespace after the section
 
 %------------------------------------------------
 
 \runsubsection{Midé Technology}
-\descript{| \href{https://github.com/MideTechnology/idelib}{\underline{idelib}}}
-
+\descript{| \href{https://github.com/MideTechnology/ebmlite}{\underline{ebmlite}} | \href{https://github.com/MideTechnology/idelib}{\underline{idelib}} | \href{https://github.com/MideTechnology/endaq-python}{\underline{endaq-python}}}
 \location{Ongoing open-source development}
-IDElib is an open-source library developed my Midé, based on ebmlite and developed to facilitate accessing data and metadata from our IDE file format.  My responsibilities with IDElib has included testing, CI pipelines, writing features based on different analysis, and optimizing data access times by refactoring back-end methods.
+I'm an active developer on all of Midé's open-source libraries, which are all developed in python and focus on analyzing shock and vibration data.  The analysis backend is built on Numpy, Pandas, and SciPy, with a plotting front-end built on Plotly.  In addition to the library itself, I also developed a CI/CD pipeline for these libraries using Github Actions.
 
 \sectionspace % Some whitespace after the section
 
@@ -232,7 +175,7 @@ IDElib is an open-source library developed my Midé, based on ebmlite and develo
 \descript{| \href{https://info.mide.com/data-loggers/slam-stick-lab-software}{\underline{Endaq Analyzer}}}
 
 \location{February 2018 - present}
-The Endaq Analyzer is a standalone program developed in Matlab to give our users access to a matlab-native interface to open, visualize, analyze, and export Midé's EBML based IDE files.  The Analyzer uses Matlab's Signal Processing Toolbox to calculate and render FFTs, spectrograms, moving metrics, and other analyses.  Later stages of development added other developers and testers to the team, for whom I actd as manager.
+The Endaq Analyzer is a standalone program developed in Matlab to analyze shock and vibration data.  The is built with the Matlab Compiler and makes heavy use of the Signal Processing Toolbox to generate PSD's, spectrograms, waterfall plots, and moving metrics.
 
 \sectionspace % Some whitespace after the section
 
@@ -242,19 +185,19 @@ The Endaq Analyzer is a standalone program developed in Matlab to give our users
 \descript{| \href{https://www.sbir.gov/node/1485253}{\underline{DeMCAS}}}
 
 \location{April 2018 - December 2019}
-DeMCAS is a Matlab-based software tool which optimizes the control surface design of an aerodynamic body.  As the software engineer of the team, my responsibilities included software architecture, GUI design, implementation of optimization algorithms, and interfacing with legacy code.  Other responsibilities included electrical design, and both electrical and mechanical prototyping.  This project required me to work in the center of a multi-disciplinary team and understand a complex and frequently changing set of requirements, learning on the fly and facilitating communication between multiple C-level and VP-level engineers.
+DeMCAS is a Matlab-based software tool which uses gradient descent to optimize the size and profile of aerofoils.  In addition to the codebase, I was also responsible for creating physical test rigs to validate the mechanical, electrical, and aerodynamic perfomance of our simulations.
 
 \sectionspace % Some whitespace after the section
 
 %------------------------------------------------
-
-\runsubsection{WPI}
-\descript{| \href{https://web.wpi.edu/Pubs/E-project/Available/E-project-042816-154409/unrestricted/MartinoManningFlaniganMQP.pdf}{\underline{Gamified Music Learning System with VR Force Feedback for Rehabilitation}}}
-
-\location{August 2015 - April 2016}
-Designed the mechanical and electrical systems for a custom haptic glove, utilizing a soft actuation system.  
-
-\sectionspace % Some whitespace after the section
+%
+%\runsubsection{WPI}
+%\descript{| \href{https://web.wpi.edu/Pubs/E-project/Available/E-project-042816-154409/unrestricted/MartinoManningFlaniganMQP.pdf}{\underline{Gamified Music Learning System with VR Force Feedback for Rehabilitation}}}
+%
+%\location{August 2015 - April 2016}
+%Designed the mechanical and electrical systems for a custom haptic glove, utilizing a soft actuation system.  
+%
+%\sectionspace % Some whitespace after the section
 
 %------------------------------------------------
 
