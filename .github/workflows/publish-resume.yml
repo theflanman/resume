@@ -1,0 +1,48 @@
+name: Build and Publish Resume
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - uses: docker://ghcr.io/qjoly/xelatex:latest
+      with:
+        args: |
+          --pdf --engine=xetex --synctex=1 --clean Connor_Flanigan_Resume.tex
+
+    - name: Upload PDF artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: resume-pdf
+        path: Connor_Flanigan_Resume.pdf
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+
+    steps:
+    - name: Download PDF artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: resume-pdf
+
+    - name: Generate tag name
+      id: tag
+      run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: Connor_Flanigan_Resume.pdf
+        tag_name: ${{ steps.tag.outputs.date }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
